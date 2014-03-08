@@ -3,23 +3,22 @@ $db = getDatabase();
 
 function getDatabase()
 {
-   $usr= 'mydb1524fc';
-   $database = "mydb1524";
-   $password = 'jo5mib';
-   $mysqli = new mysqli("localhost", $usr, $password, $database);
-   if ($mysqli->connect_errno) {
+	$database = "mydb1448";
+	$usr= 'mydb1448bd';
+	$password = 'ha7gup';
+	$mysqli = new mysqli("localhost", $usr, $password, $database);
+	if ($mysqli->connect_errno) {
       echo "Failed to connect to database : (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
    }
    
    return $mysqli;
 }
-function getAllComment($db)
+
+function getStatus($db)
 {
-   $response = $db->query('SELECT * FROM commentsection');
+   $response = $db->query('SELECT * FROM Application');
    
-   while($array = $response->fetch_array(MYSQLI_ASSOC)) {
-     
-      
+   while($array = $response->fetch_array(MYSQLI_ASSOC)) {  
       $result[]=$array["nickname"]. ' : '.$array['message'].'<br />';
    }
    return $result;

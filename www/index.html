@@ -1,53 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Title of the document</title>
-<link rel="stylesheet" type="text/css" href="Code/styles.css">
+	<title>M2C Application</title>
+<link rel="stylesheet" type="text/css" href="css/styles.css">
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 <meta name="viewport" id="viewport"
 	content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
-<script type="text/javascript" charset="utf-8" src="Code/cordova.js"></script>
-<script type="text/javascript" charset="utf-8">
 
-	function onBodyLoad() {
-		document.addEventListener("deviceready", onDeviceReady, false);
-	}
-	function onDeviceReady() {
-
-	}
-	function splashScreen() {
-		navigator.splashscreen.show();
-	}
-	function connectToCharger() {
-		var status = "Connected";
-		var table = document.getElementById("infoTable");
-		table.deleteRow(0);
-		table.deleteRow(0);
-		table.deleteRow(0);
-
-		{
-			var row0 = table.insertRow(0);
-			var row1 = table.insertRow(1);
-			var row2 = table.insertRow(2);
-
-			var cell00 = row0.insertCell(0);
-			var cell10 = row1.insertCell(0);
-			var cell11 = row1.insertCell(1);
-			var cell20 = row2.insertCell(0);
-			var cell21 = row2.insertCell(1);
-
-			cell00.innerHTML = "Home Charger 1:";
-			cell10.innerHTML = "Vehicle:";
-			cell11.innerHTML = status;
-			cell20.innerHTML = "Charge:";
-			cell21.innerHTML = "Not Available";
-
-			document.getElementById("infoDiv").className = "infoConnected";
-		}
-
-	}
-	
-</script>
 </head>
 <body style="background-color: #D0D0D0">
 	<h1 class="heading">
@@ -71,23 +30,25 @@
 	</div>
 
 	<div id="content" class="content">
-		<p>
-			<button class="mainButton" type="button" onclick="splashScreen()">Charger
-				Statistics</button>
-		</p>
-		<p>
-			<button class="mainButton" type="button" onclick="connectToCharger()">Connect
-				to Charger</button>
-		</p>
-		<p>
-			<button class="mainButton" type="button" onclick="">Configure
-				Charger</button>
-		</p>
-		<p>
-			<button class="mainButton" type="button" onclick="">Settings</button>
-		</p>
+			<p>
+				<button class="mainButton" type="button" id="load">Connect to Server</button>
+			</p>
+			<p>
+				<button class="mainButton" type="button" id="fail">Failed Connection</button>
+			</p>
+			<p>
+				<button class="mainButton" type="button" onclick="">Configure Charger</button>
+			</p>
+			<p>
+				<button class="mainButton" type="button" onclick="">Settings</button>
+			</p>
 	</div>
-
+<input id="name" name="name" placeholder="name">
 	<div id="foot" class="footer">Picture / Commercial or whatever</div>
+	
+	<!-- <script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>  CORDOVA DOES NOT WORK WITH RIPPLE FOR ME--> 
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/index.js"></script>
+	
 </body>
 </html>
