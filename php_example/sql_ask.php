@@ -14,11 +14,11 @@
     <p>something here again</p>
     <p>
     <?php 
-    echo $comment
+    echo $comment;
     ?>
     </p>
     <?php 
     //end of the forEach loop
-    }
+  }
     ?>
 
