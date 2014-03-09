@@ -1,50 +1,35 @@
-$("#load").click(function()
-		{
-	var nameValue= $("#name").val();
-		
+$("#connectToServer").click(function(){			
 	$.ajax({
 		type: 'POST',
-		data: {name: nameValue},
-		url: 'http://danu6.it.nuigalway.ie/bonstrom/project/process.php',
+		//data: {name: nameValue},
+		url: 'http://danu6.it.nuigalway.ie/bonstrom/project/model.php',
 		timeout: 3000,
-			success: function(data){
-				$("#foot").html(data);
-			},
-			error: function(){
+			 success: function(response){
+				$("#infoLabel").html(response);			
+			 },
+			 error: function(){
 				alert("failed to load data");
-			}
-		});
+			 }
+		   });
 	});
 		
 $("#fail").click(function()
 		{
-			var nameValue= $("#name").val();
-			$.ajax({
-				type: 'POST',
-				data: { fail: nameValue},
-				url: 'process.php',
-				timeout: 3000,
-				success: function(data){
-					$("#data").html(data);
-				},
-				error: function(){
-					alert("failed to load data");
-				}
-			});
-
+			$("#infoLabel").html("HEJ");
 		});
-
-
 
 function onBodyLoad() {
 	document.addEventListener("deviceready", onDeviceReady, false);
 }
+
 function onDeviceReady() {
 
 }
+
 function splashScreen() {
 	//navigator.splashscreen.show();
 }
+
 function connectToCharger() {
 	var status = "Connected";
 	var table = document.getElementById("infoTable");
