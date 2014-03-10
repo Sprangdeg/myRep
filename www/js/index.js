@@ -2,7 +2,7 @@ $("#connectToServer").click(function(){
 	$.ajax({
 		type: 'POST',
 		//data: {name: nameValue},
-		url: 'http://danu6.it.nuigalway.ie/bonstrom/project/model.php',
+		url: 'http://danu6.it.nuigalway.ie/bonstrom/project/getStatus.php',
 		timeout: 3000,
 			 success: function(response){
 				$("#infoLabel").html(response);			
@@ -13,17 +13,18 @@ $("#connectToServer").click(function(){
 		   });
 	});
 		
-$("#fail").click(function()
+$("#createUser").click(function()
 		{
-			$("#infoLabel").html("HEJ");
+			$("#content").load("createUser.html");
 		});
 
 function onBodyLoad() {
 	document.addEventListener("deviceready", onDeviceReady, false);
+	
 }
 
 function onDeviceReady() {
-
+	$("#content").load("menu.html");
 }
 
 function splashScreen() {

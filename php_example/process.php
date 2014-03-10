@@ -1,6 +1,6 @@
 
 <?php
-// everything printed through php and html will be loaded
+// everything which is printed through php and html will be loaded
 // by ajax ! 
 // the strong tag too !
 ?>
