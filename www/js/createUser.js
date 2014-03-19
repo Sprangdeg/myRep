@@ -1,5 +1,4 @@
 $("#createUser").click(function(){			
-	alert("Creating user");
 	$.ajax({
 		type: 'POST',
 		data: {	name: $("#nameValue").val(),

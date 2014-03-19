@@ -8,7 +8,7 @@ $("#connectToServer").click(function(){
 				$("#infoLabel").html(response);			
 			 },
 			 error: function(){
-				alert("failed to load data");
+				$("#infoLabel").html("Failed to connect to server");
 			 }
 		   });
 	});
