@@ -13,10 +13,16 @@ $("#connectToServer").click(function(){
 		   });
 	});
 		
-$("#createUser").click(function()
+$("#chargerStats").click(function()
 		{
-			$("#content").load("createUser.html");
+			$("#content").load("chargerStats.html");
 		});
+
+$("#setCharge").click(function()
+		{
+			$("#content").load("setCharge.html");
+		});
+
 
 function onBodyLoad() {
 	document.addEventListener("deviceready", onDeviceReady, false);
