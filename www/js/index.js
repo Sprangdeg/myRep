@@ -5,11 +5,10 @@ $(window).load(function() {
 });
 
 function connectToCharger(){
-	 var test = "stringier";
 	$.ajax({
 		type: 'POST',
 		url: 'http://danu6.it.nuigalway.ie/bonstrom/project/server.php',
-		data: {'test': test},
+		data: {'type': "status"},
 		timeout: 3000,
 		success: function(response){
 						printResponse(response);

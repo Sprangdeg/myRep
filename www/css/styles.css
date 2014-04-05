@@ -120,6 +120,19 @@ table.center {
 	border-width:3px;
 }
 
+.statisticsLabel {
+	font-weight: bold;
+	font-size:20px;
+	background-color:lightblue;
+	text-align:center;
+	margin-left: 5%;
+    margin-right: 5%;
+	border-radius: 15px;
+	border-color:black;
+	border-style:solid;
+	border-width:3px;
+}
+
 .content {
 	text-align:center;
 }
