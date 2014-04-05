@@ -1,19 +1,20 @@
 //When the program starts loads the menu and connects to the server
 $(window).load(function() {
    $("#content").load("menu.html");
-   connectToServer();
+   connectToCharger();
 });
 
-function connectToServer(){
+function connectToCharger(){
+	 var test = "stringier";
 	$.ajax({
 		type: 'POST',
-		//data: {name: nameValue},
-		url: 'http://danu6.it.nuigalway.ie/bonstrom/project/getStatus.php',
+		url: 'http://danu6.it.nuigalway.ie/bonstrom/project/server.php',
+		data: {'test': test},
 		timeout: 3000,
-			 success: function(response){
-				$("#infoLabel").html(response);			
+		success: function(response){
+						printResponse(response);
 			 },
-			 error: function(){ printError("Failed to connect to server. <br> Try to reconnect."); }
+		error: function(){ printError("Failed to connect to server. <br> Try and reconnect."); }
 		   });
 }
 
@@ -23,6 +24,7 @@ function printError(error){
 }
 
 function printResponse(response){
+			$("#infoLabel").css("background-color", "lightgreen");
 			$("#infoLabel").html(response);
 }
 
@@ -40,6 +42,19 @@ $("#chargeButton").click(function()
 function splashScreen() {
 	//navigator.splashscreen.show();
 }
+
+$("#connectServer").click(function()
+		{
+		$.ajax({
+		type: 'POST',
+		url: 'http://danu6.it.nuigalway.ie/bonstrom/project/server.php',
+		timeout: 3000,
+		success: function(response){
+					printResponse(response);
+			 },
+		error: function(){ printError("Failed to connect to server. <br> Try and reconnect."); }
+		   });
+		});
 
 
 
