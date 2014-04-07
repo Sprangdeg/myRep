@@ -21,5 +21,5 @@ function setCharge()
 }
 
 function printResponse(response){
-	$("#content").load(response);	
+	$("#content").html(response);	
 }
