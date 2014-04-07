@@ -1,15 +1,12 @@
 $("#setCharge").click(function(){
 			setCharge();		
-			loadMainMenu();
 		});
-
 
 function setCharge()
 {
-	alert($("#chargeRate").val());
     $.ajax({
         type: 'POST',
-        data: {	'type': 'setCharge', 
+        data: {	'request': 'setManualCharge', 
         		'targetCharge': $("#targetCharge").val(),
         		'chargeRate': $("#chargeRate").val() },
 		url: 'http://danu6.it.nuigalway.ie/bonstrom/project/server.php',
@@ -24,5 +21,5 @@ function setCharge()
 }
 
 function printResponse(response){
-	$("#infoLabel").html(response);	
+	$("#content").load(response);	
 }

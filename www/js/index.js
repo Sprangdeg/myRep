@@ -1,8 +1,5 @@
 //When the program starts loads the menu and connects to the server
-$(window).load(function() {
-   $("#content").load("menu.html");
-   connectToCharger();
-});
+$(window).load(initateApplication());
 
 function printError(error){
 			$("#infoLabel").css("background-color", "#FF6666");
@@ -27,7 +24,7 @@ function connectToCharger(){
 	$.ajax({
 		type: 'POST',
 		url: 'http://danu6.it.nuigalway.ie/bonstrom/project/server.php',
-		data: {'type': "status"},
+		data: {'request': "status"},
 		timeout: 3000,
 		success: function(response){
 						printResponse(response);
@@ -40,3 +37,11 @@ function removeBackButton(){
 	//remove back button if the main menu is loaded
 }
 
+function initateApplication(){
+	loadMainMenu();
+	connectToCharger();
+}
+
+function loadMainMenu() {
+   $("#content").load("menu.html");
+}

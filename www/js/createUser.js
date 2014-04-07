@@ -1,3 +1,4 @@
+//Old code, doesn't work
 $("#createUser").click(function(){			
 	$.ajax({
 		type: 'POST',
@@ -14,6 +15,3 @@ $("#createUser").click(function(){
 		   });
 	});
 	
-$("#backToMain").click(function(){			
-	$("#content").load("menu.html");
-	});

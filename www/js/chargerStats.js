@@ -1,13 +1,8 @@
-$("#backToMain").click(function()
-		{
-			$("#content").load("menu.html");
-		});
-
 function loadStats(divId)
 {
     $.ajax({
         type: 'POST',
-        data: {'type': 'statistics'},
+        data: {'request': 'statistics'},
 		url: 'http://danu6.it.nuigalway.ie/bonstrom/project/server.php',
 		timeout: 3000,
 			 success: function(response){

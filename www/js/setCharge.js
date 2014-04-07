@@ -12,8 +12,3 @@ $("#esbnCharge").click(function()
 		{
 			$("#content").load("esbnCharge.html");
 		});
-
-$("#backToMain").click(function()
-		{
-			$("#content").load("menu.html");
-		});
