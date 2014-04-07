@@ -165,4 +165,18 @@ table.center {
 }
 
 
+.dropDownMenu{
+	display: block;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: left;
+    padding: 10px 10px;
+    font-size: 20px;
+    width: 60%;
+    background: #fff;
+    cursor: pointer;
+    border: 1px solid #f6f0e4;
+    
+}
+
 
