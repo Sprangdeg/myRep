@@ -14,12 +14,7 @@ function getDatabase(){
    return $mysqli;
 }
 
-function sanitize($target){
-	
-}
-
 function createUser($mysqli){
-
   $name = $_POST['name'];
   $charge = $_POST['charge'];
   

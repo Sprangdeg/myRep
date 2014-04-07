@@ -1,27 +1,42 @@
 <?php
-$db = getDatabase();
-//getStatus($db);
+  include "./model/Statistics.php";
+  include "./model/Status.php";
+  include "./model/Database.php";
+  include "./model/SetCharge.php";
+  
 
-function getDatabase(){
-	$database = "mydb1448";
-	$usr= 'mydb1448bd';
-	$password = 'ha7gup';
-	$mysqli = new mysqli("localhost", $usr, $password, $database);
-	if ($mysqli->connect_errno) {
-      echo "Failed to connect to database : (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-   }
-   return $mysqli;
+	if(isset($_POST['request']))
+	{
+		$request = escape($_POST['request']);
+		
+		switch ($request) {
+		case "status": $response = getStatus();
+			break;
+		case "statistics": $response = getStatistics();
+			break;
+		case "setManualCharge": $response = setManualCharge();
+			break;
+		case "setTimedCharge": $response = setTimedCharge();
+			break;
+		case "setESBNCharge": $response = setESBNCharge();
+			break;
+		default: $response = "Server: Undefined request";
+		}
+	}
+	else
+		$response = "Server: No request set";
+
+	sendResponse($response);
+
+// Sanitize input
+function escape($post)
+{
+   return $post; 
 }
 
-function getStatus($db){
-   $response = $db->query('SELECT name, charge FROM Application');
 
-   $array = $response->fetch_array(MYSQLI_ASSOC);
-   end($array);
-   $temp = $array['name'];
-   echo "<b>" . $temp . " charger" . "</b> <br>";
-   echo "Vehicle: Connected" . "<br>"; //Need code here
-   echo "Charge: " . $array['charge'] . "<br>";
+function sendResponse($response){
+	echo $response;
 }
-
 ?>
+
