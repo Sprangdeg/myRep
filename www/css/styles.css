@@ -27,7 +27,7 @@ body {
 	display:inline-block;
 	color:#ffffff;
 	font-family:Arial;
-	font-size:15px;
+	font-size:25px;
 	font-weight:bold;
 	font-style:normal;
 	height:40px;
@@ -178,5 +178,14 @@ table.center {
     border: 1px solid #f6f0e4;
     
 }
+
+.slider{
+	width: 60%; 
+	display: block;
+	margin-left:auto; 
+    margin-right:auto;
+	
+}
+
 
 

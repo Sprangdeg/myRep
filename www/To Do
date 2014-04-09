@@ -11,8 +11,7 @@ APPLICATION
 
 
 [manualCharge]
- -targetCharge is less or equal to 100%
- -targetCharge is show current charge and cant be less
+ -make the slider more beautiful
  -display answer from server nice
 
 [menu]
@@ -25,13 +24,13 @@ APPLICATION
 
 
 [timedCharge]
- -Nothing is done
+ -See previous price
 
 
 SERVER
 
 [server]
-
+ -Error messages
 
 
 [DataBase]
@@ -39,7 +38,7 @@ SERVER
 
 
 [SetCharge]
-
+ -Estimated time
 
 
 [Statistics]
@@ -54,3 +53,4 @@ SERVER
 DATABASE
  -Add correct tables
  -Add correct posts
+ -Add target time

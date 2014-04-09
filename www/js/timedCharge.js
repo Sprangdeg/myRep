@@ -1,14 +1,14 @@
-$("#setCharge").click(function(){
-			setCharge();		
+$("#getPriceButton").click(function(){
+			getPrice();		
 		});
 
-function setCharge()
+function getPrice()
 {
     $.ajax({
         type: 'POST',
-        data: {	'request': 'setManualCharge', 
+        data: {	'request': 'getPrice', 
         		'targetCharge': $("#targetChargeSlider").val(),
-        		'chargeRate': $("#chargeRate").val() },
+        		'targetTime': $("#chargeRate").val() },
 		url: 'http://danu6.it.nuigalway.ie/bonstrom/project/server.php',
 		timeout: 3000,
 			 success: function(response){

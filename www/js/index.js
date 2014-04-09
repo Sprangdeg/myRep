@@ -7,8 +7,12 @@ function printError(error){
 }
 
 function printResponse(response){
+var serverResponse = jQuery.parseJSON(response);
+
 			$("#infoLabel").css("background-color", "lightgreen");
-			$("#infoLabel").html(response);
+			$("#vehicle").text("Connected");
+			$("#chargeType").text(serverResponse.chargingType);
+			$("#currentCharge").text(serverResponse.currentCharge);
 }
 
 		
@@ -27,7 +31,7 @@ function connectToCharger(){
 		data: {'request': "status"},
 		timeout: 3000,
 		success: function(response){
-						printResponse(response);
+				printResponse(response);
 			 },
 		error: function(){ printError("Failed to connect to server. <br> Try and reconnect."); }
 		   });
