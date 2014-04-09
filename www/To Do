@@ -1,0 +1,56 @@
+Things to do:
+
+APPLICATION
+
+[chargerStats]
+	
+
+
+[index]
+ -remove backbutton
+
+
+[manualCharge]
+ -targetCharge is less or equal to 100%
+ -targetCharge is show current charge and cant be less
+ -display answer from server nice
+
+[menu]
+ 
+
+
+[setCharge]
+
+
+
+
+[timedCharge]
+ -Nothing is done
+
+
+SERVER
+
+[server]
+
+
+
+[DataBase]
+
+
+
+[SetCharge]
+
+
+
+[Statistics]
+
+
+
+[Status]
+
+
+
+
+DATABASE
+ -Add correct tables
+ -Add correct posts

@@ -1,4 +1,4 @@
-function loadStats(divId)
+function loadStats()
 {
     $.ajax({
         type: 'POST',
@@ -6,10 +6,14 @@ function loadStats(divId)
 		url: 'http://danu6.it.nuigalway.ie/bonstrom/project/server.php',
 		timeout: 3000,
 			 success: function(response){
-				$('#'+divId).html(response);			
+				printResponse(response);			
 			 },
 			 error: function(){
-				$('#'+divId).html("Failed to connect to server");
+				printResponse("Failed to connect to server");
 			 }  
     });
+}
+
+function printResponse(response){
+	$("#statistics").html(response);	
 }

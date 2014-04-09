@@ -23,3 +23,9 @@ function setCharge()
 function printResponse(response){
 	$("#content").html(response);	
 }
+
+function loadCharge(){
+	
+	var currentCharge;
+	$("#targetCharge").val("50");
+}
