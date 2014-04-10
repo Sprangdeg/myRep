@@ -49,3 +49,7 @@ function initateApplication(){
 function loadMainMenu() {
    $("#content").load("menu.html");
 }
+
+
+
+
