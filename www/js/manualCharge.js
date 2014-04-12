@@ -8,11 +8,11 @@ function setCharge()
         type: 'POST',
         data: {	'request': 'setManualCharge', 
         		'targetCharge': $("#targetChargeSlider").val(),
-        		'chargeRate': $("#chargeRate").val() },
+        		'chargingRate': $("#chargeRate").val() },
 		url: 'http://danu6.it.nuigalway.ie/bonstrom/project/server.php',
 		timeout: 3000,
 			 success: function(response){
-				printResponse(response);			
+				printResponse(response);		
 			 },
 			 error: function(){
 				printResponse("Failed to connect to server");

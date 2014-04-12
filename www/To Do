@@ -2,13 +2,15 @@ Things to do:
 
 APPLICATION
 
+[CSS]
+ -Clean up
+
 [chargerStats]
 	
 
 
 [index]
  -remove backbutton
-
 
 [manualCharge]
  -make the slider more beautiful
@@ -19,7 +21,8 @@ APPLICATION
 
 
 [setCharge]
-
+ -What happens if the current charge changes while you are at the set charge screen?
+ 	Then you can set it lower than the current charge.
 
 
 

@@ -16,17 +16,8 @@ function loadStats()
 
 function printResponse(response){
 var serverResponse = jQuery.parseJSON(response);
-var type = serverResponse.chargingType;
-var rate = serverResponse.chargingRate;
-var targetCharge = serverResponse.targetCharge;
-var currentCharge = serverResponse.currentCharge;
-var timeLeft = serverResponse.timeLeft;
-
-var print = "Charge Type: " 		+ type 			+ "<br>" +
-			"Charge Rate: " 		+ rate 			+ "<br>" +
-			"Current Charge: " 		+ currentCharge + "%<br>" +
-			"Target Charge: " 		+ targetCharge 	+ "%<br>" +		
-			"Estimated Time Left: " + timeLeft		+ " min";
-
-			$("#statistics").html(print);
+$("#type").text(serverResponse.chargingType);
+$("#rate").text(serverResponse.chargingRate);
+$("#targetCharge").text(serverResponse.targetCharge);
+$("#timeLeft").text(serverResponse.timeLeft);
 }

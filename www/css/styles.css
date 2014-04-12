@@ -158,8 +158,12 @@ table.center {
 	border-style:solid;
 	border-width:3px;
 }
-
-.h2{
+h1
+{
+	margin-bottom: 0;
+}
+h2{
+	margin-top:0;
 	color:darkorange;
 	font-size: 30px;
 }

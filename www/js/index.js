@@ -50,6 +50,10 @@ function loadMainMenu() {
    $("#content").load("menu.html");
 }
 
+function testServerResponse(response){
+	$("#serverResponse").text(response);
+}
+
 
 
 
