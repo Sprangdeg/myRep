@@ -11,6 +11,7 @@ APPLICATION
 
 [index]
  -remove backbutton
+ -change color if charging
 
 [manualCharge]
  -make the slider more beautiful

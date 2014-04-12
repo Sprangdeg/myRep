@@ -12,7 +12,7 @@ function getPrice()
 		url: 'http://danu6.it.nuigalway.ie/bonstrom/project/server.php',
 		timeout: 3000,
 			 success: function(response){
-				printResponse(response);			
+				printEstimatedPrice(response);			
 			 },
 			 error: function(){
 				printResponse("Failed to connect to server");
@@ -20,33 +20,24 @@ function getPrice()
     });
 }
 
-function printResponse(response){
+function printEstimatedPrice(response){
 var serverResponse = jQuery.parseJSON(response);
-var type = serverResponse.chargingType;
-var rate = serverResponse.chargingRate;
-var targetCharge = serverResponse.targetCharge;
-var currentCharge = serverResponse.currentCharge;
-var timeLeft = serverResponse.timeLeft;
+var price = serverResponse.chargingType;
+	$("#estimatedPrice").text(price);
 
-var print = "Charge Type: " 		+ type 			+ "<br>" +
-			"Charge Rate: " 		+ rate 			+ "<br>" +
-			"Target Charge: " 		+ targetCharge 	+ "%<br>" +		
-			"Estimated Time Left: " + timeLeft		+ " min";
-
-			$("#content").html(print);
 }
 
 function loadCharge(){
-	$("#rangeLabel").text($("#targetChargeSlider").val());
-	$("#minLabel").text(getCurrentCharge());
+	$("#minLabel").text(getCurrentCharge() + "%");
 	$("#targetChargeSlider").attr("min", getCurrentCharge());
+	
 }
 
 function getCurrentCharge(){
-	return $(currentCharge).text();
+	return $("#currentCharge").text();
 	
 }
 
 function updateRangeLabel(){
-	$("#rangeLabel").text($("#targetChargeSlider").val());
+	$("#rangeLabel").text($("#targetChargeSlider").val() + "%");
 }
