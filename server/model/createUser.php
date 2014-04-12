@@ -41,6 +41,7 @@ $mysqli->close();
 
 }
 
+
 //if (!$stmt->bind_param("ss", $nickname,$message)) {
 //     : (" . $stmt->errno . ") " . $stmt->error;
 //   }

@@ -37,16 +37,17 @@ var print = "Charge Type: " 		+ type 			+ "<br>" +
 }
 
 function loadCharge(){
-	$("#rangeLabel").text($("#targetChargeSlider").val());
-	$("#minLabel").text(getCurrentCharge());
+	
+	$("#minLabel").text(getCurrentCharge() + "%");
 	$("#targetChargeSlider").attr("min", getCurrentCharge());
+	
 }
 
 function getCurrentCharge(){
-	return $(currentCharge).text();
+	return $("#currentCharge").text();
 	
 }
 
 function updateRangeLabel(){
-	$("#rangeLabel").text($("#targetChargeSlider").val());
+	$("#rangeLabel").text($("#targetChargeSlider").val() + "%");
 }

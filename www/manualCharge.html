@@ -4,12 +4,10 @@
 	    <div>
 	     <!-- 	<p> Target Charge %: 	<br> <input class="textField" type="text" id="targetCharge">	</p>-->
 	      <div> 
-	      <label id="rangeLabel"> </label>    <br> 	
-	
+	      	<label id="rangeLabel"> </label>    <br> 		
 	      	<label id="minLabel"> </label> 	
-	      	<input class="slider" type="range" id="targetChargeSlider" min="1" max="100" onchange="updateRangeLabel() ">
-	      		100 
-
+	      	<input class="slider"type="range" id="targetChargeSlider" min="1" max="100" onchange="updateRangeLabel() ">
+	      	<span id="max">100%</span> 
 	      </div>
 			
 			<p> 
@@ -24,6 +22,9 @@
 	    </div>
 	   
 		<script type="text/javascript" charset="utf-8" src="js/manualCharge.js"></script>
-		<script>loadCharge();</script>
+		<script>
+			loadCharge();
+			updateRangeLabel();
+		</script>
 	</body>
 </html>
