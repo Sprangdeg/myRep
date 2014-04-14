@@ -12,3 +12,14 @@ $("#esbnCharge").click(function()
 		{
 			$("#content").load("esbnCharge.html");
 		});
+
+
+function convertTime(timeLeft){
+	var hours = Math.floor(timeLeft);
+	var minutes = Math.round(60*(timeLeft-hours));
+	
+	if(hours>=1)
+		return hours + "h " + minutes + "min";
+	else 
+		return minutes + "min";;
+}

@@ -12,7 +12,8 @@ function setCharge()
 		url: 'http://danu6.it.nuigalway.ie/bonstrom/project/server.php',
 		timeout: 3000,
 			 success: function(response){
-				printResponse(response);		
+				printResponse(jQuery.parseJSON(response));
+				//testServerResponse(response);		
 			 },
 			 error: function(){
 				printResponse("Failed to connect to server");
@@ -21,19 +22,13 @@ function setCharge()
 }
 
 function printResponse(response){
-var serverResponse = jQuery.parseJSON(response);
-var type = serverResponse.chargingType;
-var rate = serverResponse.chargingRate;
-var targetCharge = serverResponse.targetCharge;
-var currentCharge = serverResponse.currentCharge;
-var timeLeft = serverResponse.timeLeft;
 
-var print = "Charge Type: " 		+ type 			+ "<br>" +
-			"Charge Rate: " 		+ rate 			+ "<br>" +
-			"Target Charge: " 		+ targetCharge 	+ "%<br>" +		
-			"Estimated Time Left: " + timeLeft		+ " min";
+$("#infoLabel").load("chargingResponse.html");
+$("#type").text(response.chargingType);
+$("#rate").text(response.chargingRate);
+$("#targetCharge").text(response.targetCharge);
+$("#timeLeft").text(convertTime(response.timeLeft));
 
-			$("#content").html(print);
 }
 
 function loadCharge(){
