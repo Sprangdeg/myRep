@@ -106,7 +106,7 @@ table.center {
 .statusInfo {
 	font-weight: bold;
 	font-size:20px;
-	background-color:lightgreen;
+	background-color:orange;
 	text-align:center;
 	margin-left: 5%;
     margin-right: 5%;
@@ -140,28 +140,6 @@ table.center {
 	border-width:5px;
 	margin-left: 20%;
     margin-right: 20%;
-}
-
-.infoNotConnected {
-	font-weight: bold;
-	font-size:20px;
-	background-color:#D00000;
-	text-align:center;
-	margin-left: 5%;
-    margin-right: 5%;
-	border-radius: 15px;
-	border-color:black;
-	border-style:solid;
-	border-width:3px;
-}
-h1
-{
-	margin-bottom: 0;
-}
-h2{
-	margin-top:0;
-	color:darkorange;
-	font-size: 30px;
 }
 
 

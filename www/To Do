@@ -11,7 +11,6 @@ APPLICATION
 
 [index]
  -remove backbutton
- -change color if charging
 
 [manualCharge]
  -make the slider more beautiful
@@ -24,6 +23,7 @@ APPLICATION
 [setCharge]
  -What happens if the current charge changes while you are at the set charge screen?
  	Then you can set it lower than the current charge.
+
 
 
 
@@ -43,6 +43,7 @@ SERVER
 
 [SetCharge]
  -Estimated time
+ -Calculate price
 
 
 [Statistics]

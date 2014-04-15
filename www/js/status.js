@@ -14,20 +14,19 @@ function connectToCharger(){
 }
 
 function printResponse(response){
-		
+	
 		if(response.activity=="Full"){
 			$("#statusInfo").css("background-color", "lightgreen");
 		}
 		
 		if(response.activity=="Charging"){
-			$("#statusInfo").css("background-color", "wheat");
-		}		
-			
+			$("#statusInfo").css("background-color", "orange");
+		}				
 			$("#activity").text(response.activity);
 			$("#model").text(response.model);
 			$("#regNumber").text(response.regNumber);
 			$("#chargeType").text(response.chargingType);
-			$("#currentCharge").text(response.currentCharge);		
+			$("#currentCharge").text(response.currentCharge);
 }
 
 function printError(error){

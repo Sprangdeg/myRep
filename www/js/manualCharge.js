@@ -23,12 +23,15 @@ function setCharge()
 
 function printResponse(response){
 
-$("#infoLabel").load("chargingResponse.html");
-$("#type").text(response.chargingType);
-$("#rate").text(response.chargingRate);
-$("#targetCharge").text(response.targetCharge);
-$("#timeLeft").text(convertTime(response.timeLeft));
-
+//The function is a "callback". Since the code would not find the tags in the newly loaded chargingResponse.html in time
+//it has to be called again when it has been loaded.
+$("#infoLabel").load("chargingResponse.html", function() {   
+ 		$("#type").text(response.chargingType);
+ 		$("#rate").text(response.chargingRate);
+ 		$("#targetCharge").text(response.targetCharge);
+ 		$("#timeLeft").text(convertTime(response.timeLeft)); 
+		}
+	);
 }
 
 function loadCharge(){
