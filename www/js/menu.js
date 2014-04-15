@@ -1,10 +1,12 @@
 $("#statsButton").click(function()
 		{
+			showBackButton();
 			$("#content").load("chargerStats.html");
 		});
 
 $("#chargeButton").click(function()
 		{
+			showBackButton();
 			$("#content").load("setCharge.html");
 		});
 		

@@ -5,22 +5,28 @@ function splashScreen() {
 	//navigator.splashscreen.show();
 }
 
-$("#backToMain").click(function(){
+$("#backButton").click(function(){
+			removeBackButton();
 			$("#content").load("menu.html");
 			$("#infoLabel").load("status.html");
 		});
 
 function removeBackButton(){
-	//remove back button if the main menu is loaded
+	$("#backButton").hide();
+}
+
+function showBackButton(){
+	$("#backButton").show();
 }
 
 function initateApplication(){
 	loadStatus();
 	loadMainMenu();
+	removeBackButton();
 }
 
 function loadMainMenu() {
-   $("#content").load("menu.html");
+   $("#content").load("menu.html");  
 }
 
 function loadStatus(){
