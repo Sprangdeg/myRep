@@ -10,11 +10,8 @@ APPLICATION
 
 
 [index]
- -remove backbutton
 
 [manualCharge]
- -make the slider more beautiful
- -display answer from server nice
 
 [menu]
  
@@ -42,8 +39,8 @@ SERVER
 
 
 [SetCharge]
- -Estimated time
  -Calculate price
+ -Show target charge percentage label
 
 
 [Statistics]

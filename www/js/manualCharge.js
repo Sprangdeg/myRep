@@ -34,16 +34,14 @@ $("#infoLabel").load("chargingResponse.html", function() {
 	);
 }
 
-function loadCharge(){
-	
+function loadCharge(){	
 	$("#minLabel").text(getCurrentCharge() + "%");
 	$("#targetChargeSlider").attr("min", getCurrentCharge());
 	
 }
 
 function getCurrentCharge(){
-	return $("#currentCharge").text();
-	
+	return $("#currentCharge").text();	
 }
 
 function updateRangeLabel(){

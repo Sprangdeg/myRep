@@ -1,12 +1,13 @@
 $("#getPriceButton").click(function(){
-			getPrice();		
+			getPrice();
+			//alert($("#targetTime").val());		
 		});
 
 function getPrice()
 {
     $.ajax({
         type: 'POST',
-        data: {	'request': 'getPrice', 
+        data: {	'request': 'getEstimatedPrice', 
         		'targetCharge': $("#targetChargeSlider").val(),
         		'targetTime': $("#targetTime").val() },
 		url: 'http://danu6.it.nuigalway.ie/bonstrom/project/server.php',
@@ -21,10 +22,9 @@ function getPrice()
 }
 
 function printEstimatedPrice(response){
-var serverResponse = jQuery.parseJSON(response);
-var price = serverResponse.chargingType;
-	$("#estimatedPrice").text(price);
+var price = jQuery.parseJSON(response);
 
+	$("#estimatedPrice").text("€ " + price);
 }
 
 function loadCharge(){
@@ -34,8 +34,7 @@ function loadCharge(){
 }
 
 function getCurrentCharge(){
-	return $("#currentCharge").text();
-	
+	return $("#currentCharge").text();	
 }
 
 function updateRangeLabel(){
