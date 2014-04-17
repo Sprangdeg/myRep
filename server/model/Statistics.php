@@ -6,14 +6,17 @@ function getStatistics(){
 	$car = getCarData($db);
     $charger = getChargerData($db);
 	
-		$response = "Charge Type: " . $charger['type'] . "<br>";
-		$response.= "Charge Rate: " .convertChargingRate($charger) .  "<br>";
-		$response.= "Target Charge: " .convertTargetBatteryCharge($charger, $car) . "%<br>";
-		$response.= "Estimated Time: " . getEstimatedTime($charger, $car) . "<br>";
-	
-	
+		$response = new Answer;
+		$response->chargingType= $charger['type'];
+		$response->chargingRate= chargingRateToken($charger['chargingRate']);
+		$response->targetCharge= batteryChargePercent($charger['targetCharge'], $car['batteryCapacity']);
+	    $response->currentCharge= batteryChargePercent($car['batteryCharge'], $car['batteryCapacity']);
+        $response->timeLeft= getEstimatedTime($charger['chargingRate'], $charger['targetCharge'],  $car['batteryCharge']);
+
 	return $response;
 }
+
+
 ?>
 
 

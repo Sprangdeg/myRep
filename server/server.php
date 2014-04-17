@@ -3,24 +3,33 @@
   include "./model/Status.php";
   include "./model/Database.php";
   include "./model/SetCharge.php";
+  include "./model/Error.php";
+  include "./model/Conversion.php";
+  include "./model/Response.php";
+  include "./model/GetPrice.php";
   
-
+  /* Testing purpose. Call function here
+  getEstimatedPrice();
+  */
+  
 	if(isset($_POST['request']))
 	{
 		$request = escape($_POST['request']);
 		
 		switch ($request) {
-		case "status": $response = getStatus();
+		case "status": 			$response = getStatus();
 			break;
-		case "statistics": $response = getStatistics();
+		case "statistics": 		$response = getStatistics();
 			break;
 		case "setManualCharge": $response = setManualCharge();
 			break;
-		case "setTimedCharge": $response = setTimedCharge();
+		case "getEstimatedPrice": 		$response = getEstimatedPrice();
 			break;
-		case "setESBNCharge": $response = setESBNCharge();
+		case "setTimedCharge": 	$response = setTimedCharge();
 			break;
-		default: $response = "Server: Undefined request";
+		case "setESBNCharge": 	$response = setESBNCharge();
+			break;
+		default: $response = "Server";
 		}
 	}
 	else
@@ -36,7 +45,11 @@ function escape($post)
 
 
 function sendResponse($response){
+	if($response=="Server")
 	echo $response;
+	else
+	echo json_encode($response);
 }
+
 ?>
 

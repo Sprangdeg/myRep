@@ -3,23 +3,17 @@
 
 function getStatus(){
 	$db = getDatabase();
-	
-    $carData = getCarData($db);
-    $chargerData = getChargerData($db);
-    $connected = $carData['connected'];
-    $answer = '';
+    $car = getCarData($db);
     
 	//TRUE
-	if($carData['connected']){
-        $answer.= "Vehicle: Connected" . "<br>";
-        $answer.= "Charge: " . 100*$carData['batteryCharge']/$carData['batteryCapacity'] . "%<br>";
-        $answer.= "Mode: " . $chargerData['type'];
-    }
+	if($car['connected'])
+		$response = createResponse($db);
 	//FALSE
    else{
-        $answer.=  " Vehicle: Not connected <br>";
-        $answer.= "Charge: unknown";
+        $response =  " Vehicle: Not connected <br>";
     }
-    return $answer;
+    return $response;
 }
+
+
 ?>
