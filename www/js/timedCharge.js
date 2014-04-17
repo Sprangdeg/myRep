@@ -24,12 +24,16 @@ function getPrice()
 function printEstimatedPrice(response){
 var price = jQuery.parseJSON(response);
 
-	$("#estimatedPrice").text("€ " + price);
+	if(price==0)
+		$("#estimatedPrice").text("Not Possible");
+	else
+		$("#estimatedPrice").text("€ " + price);
 }
 
 function loadCharge(){
-	$("#minLabel").text(getCurrentCharge() + "%");
-	$("#targetChargeSlider").attr("min", getCurrentCharge());
+	var min = parseInt(getCurrentCharge()) + 1;
+	$("#minLabel").text(min + "%");
+	$("#targetChargeSlider").attr("min", min);
 	
 }
 
