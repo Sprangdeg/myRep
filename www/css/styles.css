@@ -213,4 +213,9 @@ table.center {
 		width: 35px;
 	}
 
-
+.estimatedPrice{
+	font-weight:bold;
+	color:white;
+	font-size: 20px;
+	
+}
