@@ -15,6 +15,7 @@ function loadStats()
 }
 
 function printResponse(response){
+$("#type").text(response.chargingType);
 $("#rate").text(response.chargingRate);
 $("#targetCharge").text(response.targetCharge);
 $("#timeLeft").text(convertTime(response.timeLeft));
@@ -25,7 +26,7 @@ function convertTime(timeLeft){
 	var minutes = Math.round(60*(timeLeft-hours));
 	
 	if(hours>=1)
-		return hours + " h " + minutes + " min";
+		return hours + "h " + minutes + "min";
 	else 
-		return minutes + " min";;
+		return minutes + "min";;
 }

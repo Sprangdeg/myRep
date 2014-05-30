@@ -21,12 +21,7 @@ function printResponse(response){
 		
 		if(response.activity=="Charging"){
 			$("#statusInfo").css("background-color", "orange");
-		}	
-		
-		if(response.activity=="Finished"){
-			$("#statusInfo").css("background-color", "yellow");
-		}	
-					
+		}				
 			$("#activity").text(response.activity);
 			$("#model").text(response.model);
 			$("#regNumber").text(response.regNumber);

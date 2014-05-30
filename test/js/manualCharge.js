@@ -12,7 +12,8 @@ function setCharge()
 		url: 'http://danu6.it.nuigalway.ie/bonstrom/project/server.php',
 		timeout: 3000,
 			 success: function(response){
-				printResponse(jQuery.parseJSON(response));	
+				printResponse(jQuery.parseJSON(response));
+				//testServerResponse(response);		
 			 },
 			 error: function(){
 				printResponse("Failed to connect to server");
@@ -25,17 +26,17 @@ function printResponse(response){
 //The function is a "callback". Since the code would not find the tags in the newly loaded chargingResponse.html in time
 //it has to be called again when it has been loaded.
 $("#infoLabel").load("chargingResponse.html", function() {   
- 		$("#field1").text("Mode: " + response.chargingType);
- 		$("#field2").text("Charge Rate: " + response.chargingRate);
- 		$("#field3").text("Target Charge: " + response.targetCharge + "%");
- 		$("#field4").text("Estimated Time Left: " + convertTime(response.timeLeft)); 
+ 		$("#type").text(response.chargingType);
+ 		$("#rate").text(response.chargingRate);
+ 		$("#targetCharge").text(response.targetCharge);
+ 		$("#timeLeft").text(convertTime(response.timeLeft)); 
 		}
 	);
 }
 
 function loadCharge(){	
 	$("#minLabel").text(getCurrentCharge() + "%");
-	$("#targetChargeSlider").attr("min", getCurrentCharge()-1);
+	$("#targetChargeSlider").attr("min", getCurrentCharge());
 	
 }
 

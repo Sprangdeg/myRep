@@ -4,6 +4,7 @@ $("#getPriceButton").click(function(){
 
 $("#confirmChargeButton").click(function(){
 			setTimedCharge();
+	
 		});
 
 function getPrice()
@@ -26,8 +27,7 @@ function getPrice()
 
 function setTimedCharge()
 {
-	alert($("#estimatedPrice").text());
-    if($("#estimatedPrice").text()=="" || $("#estimatedPrice").text()=="Not Possible"){
+    if($("#estimatedPrice").val()=="" || $("#estimatedPrice").val()=="Not Possible"){
   		$("#infoLabel").load("error.html", function() {   
 			$("#error").text("Error: Not possible to set charge");
 		}
@@ -38,30 +38,27 @@ function setTimedCharge()
         	type: 'POST',
         	data: {	'request': 'setTimedCharge', 
         			'targetCharge': $("#targetChargeSlider").val(),
-        			'price': $("#estimatedPrice").text(),
         			'targetTime': $("#targetTime").val() },
 			url: 'http://danu6.it.nuigalway.ie/bonstrom/project/server.php',
 			timeout: 3000,
 				 success: function(response){
-					printResponse(jQuery.parseJSON(response));	
-					//testServerResponse(response);	
+					printResponse(response);			
 			 },
 			 	error: function(){
 					printError("Failed to connect to server");
 				 }  
     	});
-     }
+    }
 }
 
 function printResponse(response){
 	//The function is a "callback". Since the code would not find the tags in the newly loaded chargingResponse.html in time
 //it has to be called again when it has been loaded.
-		alert("here");
 		$("#infoLabel").load("chargingResponse.html", function() {   
- 		$("#field1").text("Mode: " + response.chargingType);
- 		$("#field2").text("Target Time: " + response.targetTime);
- 		$("#field3").text("Target Charge: " + response.targetCharge + "%");
- 		$("#field4").text("Estimated Price: €" + response.price); 
+ 		$("#type").text(response.chargingType);
+ 		$("#rate").text(response.chargingRate);
+ 		$("#targetCharge").text(response.targetCharge);
+ 		$("#timeLeft").text(convertTime(response.timeLeft)); 
 		}
 	);
 }
