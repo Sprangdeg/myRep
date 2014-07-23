@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<body>
+	    <div>
+	      	<p> Target Time: 	<br> 
+	      	<input class="textField" type="time" id="targetTime">
+	      <div> 
+	      	Target Charge: <label id="rangeLabel" style="font-weight:bold"> </label>    <br><br> 
+	      	<label id="minLabel"> </label> 	
+	      	<input class="slider"type="range" id="targetChargeSlider" min="1" max="100" onchange="updateRangeLabel() ">
+	      	<span id="max">100%</span> 
+	      </div>
+	      
+	      	<br>
+	      	<button class="mainButton" type="button" id="getPriceButton"> Get Price </button>
+	    </div>
+	    
+	    <div id="confirmDiv">
+	    	<br> <hr>
+	      	<p> Estimated price: </p> 
+	      	
+	      	<span style="color:white">€</span> <span id="estimatedPrice" class="estimatedPrice"> </span> <br> <br>
+	      	
+	      	<button class="mainButton" type="button" id="confirmChargeButton"> Confirm Charge </button>
+	    </div>
+	    
+	    <script type="text/javascript" charset="utf-8" src="js/timedCharge.js"></script>
+		<script> loadCharge(); updateRangeLabel(); </script>
+	</body>
+</html>

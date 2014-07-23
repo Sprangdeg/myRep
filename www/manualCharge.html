@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<body>
+	    <div>
+	     <!-- 	<p> Target Charge %: 	<br> <input class="textField" type="text" id="targetCharge">	</p>-->
+	      <div> 
+	      	<br>
+	      	<label id="rangeLabel" style="font-weight:bold"> </label>    <br><br> 
+	      	<label id="minLabel"> </label> 	
+	      	<input class="slider"type="range" id="targetChargeSlider" min="1" max="100" onchange="updateRangeLabel() ">
+	      	<span id="max">100%</span> 
+	      </div>
+			
+			<p> 
+				Charge Type:
+				<select class="dropDownMenu"id="chargeRate">
+					<option value="Fast" > Fast	</option>
+					<option value="Medium"> Medium	</option>
+					<option value="Slow" > Trickle	</option>
+				</select>	
+			</p>
+			<p> <button class="mainButton" type="button" id="setCharge"> Set Charge	</button>	</p>			
+	    </div>
+	   
+		<script type="text/javascript" charset="utf-8" src="js/manualCharge.js"></script>
+		<script> loadCharge(); updateRangeLabel(); </script>
+	</body>
+</html>

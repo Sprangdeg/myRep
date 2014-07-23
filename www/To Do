@@ -1,0 +1,58 @@
+Things to do:
+
+APPLICATION
+
+[CSS]
+ -Clean up
+
+[chargerStats]
+	
+
+
+[index]
+
+[manualCharge]
+
+[menu]
+ 
+
+
+[setCharge]
+ -What happens if the current charge changes while you are at the set charge screen?
+ 	Then you can set it lower than the current charge.
+
+
+
+
+[timedCharge]
+ -See previous price
+ -See tariff
+
+SERVER
+
+[server]
+ -Error messages
+
+
+[DataBase]
+
+
+
+[SetCharge]
+ -Calculate price
+ -Show target charge percentage label
+
+
+[Statistics]
+
+
+
+[Status]
+
+
+
+
+DATABASE
+ -Add correct tables
+ -Add correct posts
+ -Add target time
