@@ -9,7 +9,7 @@ function setCharge()
         data: {	'request': 'setManualCharge', 
         		'targetCharge': $("#targetChargeSlider").val(),
         		'chargingRate': $("#chargeRate").val() },
-		url: 'http://danu6.it.nuigalway.ie/bonstrom/project/server.php',
+		url: 'http://aivu.se/bean/server.php',
 		timeout: 3000,
 			 success: function(response){
 				printResponse(jQuery.parseJSON(response));	
