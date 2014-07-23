@@ -1,7 +1,7 @@
 function connectToCharger(){
 	$.ajax({
 		type: 'POST',
-		url: 'http://danu6.it.nuigalway.ie/bonstrom/project/server.php',
+		url: 'http://aivu.se/bean/server.php',
 		data: {'request': "status"},
 		timeout: 3000,
 		success: function(response){
